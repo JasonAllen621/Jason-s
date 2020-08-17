@@ -30,9 +30,9 @@ int main(void)
 		switch (number)
 		{
 		case 0:return 0;
-		case 1: 
+		case 1:
 		{Student* stud = NULL; step1(stud);} continue;
-		case 2: 
+		case 2:
 		{Student* score = infoscanf();
 		if (score == 0) break;
 		step2(score);}    continue;
@@ -40,12 +40,11 @@ int main(void)
 		{Student* head = infoscanf();
 		if (head == 0) break;
 		step3(head); } continue;
-		case 4: 
+		case 4:
 		  {
 			printf("关于系统：\n");
-			printf("制作人员：组内四人均为中国海洋大学工程学院自动化专业2019级学生：\n");
-			printf("19090041073 余一鹏；19090041074 张国宏；19090041075 张浩楠；19090041076 赵晨宇。\n");;
-			printf("指导教师：史政。\n");
+			printf("制作人员：作者均为中国海洋大学工程学院自动化专业学生：\n");
+			printf("这些内容均由JasonAllen621及其同学所做。\n");;
 			printf("完成后的话：这个系统肯定有不少缺漏。原本想做一个有图形界面的程序兼有完善的防爆功能，但是碍于技术和时间原因，\
 				最终程序只能勉强实现基本功能。\n——Powered by Visual Studio 2019\n");
 			printf(" 按0键以返回“操作菜单”页面 || 按除0外的任意数字键以结束程序 \n");
@@ -114,7 +113,7 @@ void step1(Student* stud)
 			scanf_s("%d", &insert_num);getchar();
 			printf("在这个成员前（B）还是后（A）：");                   //输入是要插入学号前还是后，B是前插，A是后插。
 			scanf_s("%c", &dir,1);getchar();
-			int a = insert(&head, insert_num, dir, inser);          //调用插入函数 
+			int a = insert(&head, insert_num, dir, inser);          //调用插入函数
 			if(a==1) save(head);
 		}           continue;
 		case 4: {
@@ -230,7 +229,7 @@ void save(Student* stud)
 Student* infoscanf()
 {
 	int n = 0, i;
-	Student* p1, * p2, * head;     
+	Student* p1, * p2, * head;
 	p1 = p2 = (Student*)malloc(sizeof(Student));
 	FILE* out; errno_t err;
 	err = fopen_s(&out, "studentinfo.txt", "r");
